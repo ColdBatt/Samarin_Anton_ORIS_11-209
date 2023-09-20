@@ -1,0 +1,31 @@
+﻿body{
+    font-size: 20px;
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.not-found-shape{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    transform: rotate(45deg);
+    background: #FF5722;
+    border-radius: 5px;
+    border: 5px dashed black;
+}
+.code{
+    rotate: 315deg;
+    font-size: 80px;
+    font-weight: bold;
+}
+h1, p{
+
+}

@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://kttc.ru/favicon.png?v3">
+    <title>Лучшие игроки и кланы. KTTC - Как только, так сразу. Сессионная статистика World of Tanks.</title>
+
+    <style>
+        body{
+            font-size: 14px;
+            margin: 0;
+            font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .content{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            background-color: #f1f1f1;;
+        }
+        .banner{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        .menu{
+            display: flex;
+            width: 100%;
+            height: 80px;
+            align-items: center;
+
+            flex-direction: row;
+            border-bottom: 1px solid #dedede;
+            background: #fbfbfb url("https://kttc.ru/images/logo/bg_v2.svg");
+            background-size: cover;
+        }
+        .menu-burger{
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 10px;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+        .horizontal {
+
+            left: 22px;
+            position: absolute;
+            width: 2px;
+            height: 24px;
+            background-color: #aaaaaa;
+            rotate: 45deg;
+        }
+        .vertical {
+            left: 22px;
+            position: absolute;
+            width: 2px;
+            height: 24px;
+            background-color: #aaaaaa;
+            rotate:135deg;
+        }
+        .logo{
+            order: 1;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            margin-right: auto;
+            margin-bottom: -15px;
+        }
+        .search{
+            display: flex;
+            order: 3;
+            height: 40px;
+            width: 327px;
+            margin-left: auto;
+            margin-right: 15px;
+            background-color: #aaaaaa;
+        }
+        .input{
+            border: 1px solid #cccccc;
+            line-height: 38px;
+            padding: 0 15px;
+            width: 100%;
+            outline: none;
+            border-right: 0;
+        }
+        .type {
+            border: 1px solid #cbcbcb;
+            color: black;
+            padding: 0 0 0 10px;
+            background: white;
+            text-decoration: none;
+            min-width: 80px;
+        }
+        .type:hover{
+            background: rgb(242, 242, 242);
+        }
+        .search-button{
+            border: 1px solid #cbcbcb;
+            border-left: none;
+            padding: 0 10px;
+            margin-bottom: 0;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+        }
+        .search-button:hover{
+            background: rgb(242, 242, 242);
+        }
+        .language{
+            width: 21px;
+            height: 22px;
+            vertical-align: top;
+            display: flex;
+            order: 4;
+            margin-right: 15px;
+        }
+        .active{
+            text-decoration: none;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 18px;
+            color: #1a1a1a;
+            opacity: .7;
+        }
+        .active:hover{
+            text-decoration: underline;
+        }
+        .authorize{
+            order: 5;
+            margin-right: 10px;
+        }
+        .login{
+            height: 100%;
+            padding: 0 15px;
+            line-height: 38px;
+            display: flex;
+            margin-bottom: 0;
+            border: 1px solid #cbcbcb;
+            text-decoration: none;
+            background-color: transparent;
+            color: black;
+            align-items: center;
+        }
+        .login:hover{
+            background: rgb(242, 242, 242);
+        }
+         footer{
+            color: #999;
+            background-color: #f8f8f8;
+            border-top: 1px solid #e5e5e5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 15px 0;
+        }
+        .foot-link{
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .rights{
+            margin: 0 0 2em 0;
+        }
+        .side-panel{
+            width: 250px;
+            height: auto;
+            padding: 25px;
+        }
+        .content-wrapper{
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+        }
+        .vip-link{
+            text-decoration: none;
+            color: red;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .side-panel-link{
+            margin-bottom: 15px;
+            text-decoration: underline;
+        }
+        li{
+            width: 200px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            display: flex;
+            font-size: 100%;
+            font-weight: normal;
+            flex-direction: column;
+            align-items: flex-start;
+            vertical-align: baseline;
+            background: transparent;
+        }
+        ul{
+            margin: 0 0 2em 0;
+            list-style: none;
+            padding-inline-start: 0;
+        }
+        a{
+            text-decoration: none;
+            margin-bottom: 15px;
+            color: #6d6d6d;
+            font-weight: 400;
+            text-align: start;
+        }
+        .side-panel-link{
+            text-decoration: none;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 16px;
+        }
+        .vk{
+           color: rgb(0, 119, 255);
+        }
+        .tg{
+            color: rgb(28, 147, 227);
+        }
+        .main-content{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card{
+            width: 43%;
+            display: flex;
+            margin: 1.5vw 1.5%;
+            background-color: #fbfbfb;
+            border: 1px solid #dfdfdf;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 25px;
+            max-width: 100%;
+        }
+        h2{
+            display: flex;
+            justify-content: flex-start;
+            font-size: 1.75em;
+            letter-spacing: -0.025em;
+            color: #47363f;
+        }
+        p{
+            margin-top: -10px;
+            display: flex;
+            justify-content: flex-start;
+            color: #999;
+            font-size: 1.25em;
+            position: relative;
+            margin-bottom: 1em;
+        }
+        .positions li{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 45px;
+            align-items: center;
+            padding: 5px 0;
+        }
+        .first-place{
+            color: white;
+            border-radius: 50%;
+            background-color: gold;
+            display: flex;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 22px;
+            margin-left: -40px;
+        }
+        .nickname{
+            padding-left: 10px;
+            width: 50%;
+            font-size: 18px;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #167ac6;
+        }
+        .stats{
+            display: flex;
+            align-items: center;
+            width: 50%;
+            justify-content: flex-end;
+        }
+        .win-scores{
+            margin-left: 5px;
+            color: #c64cff;
+        }
+        .fights{
+            margin-left: 5px;
+            color: #25c2dd;
+        }
+        .winrate{
+            margin-left: 5px;
+            color: #c64cff;
+        }
+        .second-place{
+            color: white;
+            border-radius: 50%;
+            position: absolute;
+            background-color: silver;
+            display: flex;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 22px;
+            margin-left: -40px;
+        }
+        .third-place{
+            color: white;
+            border-radius: 50%;
+            background-color: #e8b17a;
+            display: flex;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            margin-right: 5px;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 22px;
+            margin-left: -40px;
+        }
+        .place{
+            color: black;
+            border-radius: 50%;
+            position: absolute;
+            background-color: transparent;
+            display: flex;
+            width: 40px;
+            height: 40px;
+            margin-right: 5px;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 22px;
+            margin-left: -40px;
+        }
+        .positions{
+            border-bottom-color: rgb(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 0;
+        }
+        .separator{
+            width: calc(40px + 100%);
+            left: 40px;
+            height: 0.5px;
+            background-color: #6d6d6d;
+        }
+        .positions .top{
+            padding: 15px 0 0 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .top1000{
+            text-decoration: none;
+            color: rgb(22, 122, 198);
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .top1000:hover{
+            text-decoration: underline;
+        }
+        .clan-icon{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+        .nickname{
+            margin: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="menu">
+            <div class="menu-burger">
+                <div class="horizontal"></div>
+                <div class="vertical"></div>
+            </div>
+            <div class="logo">
+                <a href="https://kttc.ru/wot/ru/">
+                    <img src="https://kttc.ru/images/logo/kttc_logo.svg">
+                </a>
+            </div>
+            <div class="search">
+                <input class="input" placeholder="Введите ник или клан">
+                <select class="type">
+                    <option>Ник</option>
+                    <option>Клан</option>
+                </select>
+                <a class="search-button" href="https://kttc.ru/wot/ru/#">
+                    <img class="lope" width="15" height="15" src="https://kttc.ru/images/search.svg">
+                </a>
+
+            </div>
+            <div class="language">
+                <a href="https://kttc.ru/wot/ru/" class="active">Ru</a>
+            </div>
+            <div class="authorize">
+                <a class="login" href="https://kttc.ru/wot/ru/tools/auth/?backurl=/wot/ru/">Войти с Lesta ID</a>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="side-panel">
+                <ul>
+                    <li>
+                        <a class="vip-link" href="http  s://kttc.ru/wot/ru/vip">VIP аккаунт</a>
+                    </li>
+                    <li>
+                        <a class="side-panel-link" href="https://kttc.ru/wot/ru/info/gunmarks">Отметки на стволах</a>
+                    </li>
+                    <li>
+                        <a class="side-panel-link" href="https://kttc.ru/wot/ru/info/mastery">Знаки классности</a>
+                    </li>
+                    <li>
+                        <a class="side-panel-link" href="https://kttc.ru/wot/ru/clans">Кланы</a>
+                    </li>
+                    <li>
+                        <a class="side-panel-link" href="">Топ</a>
+                        <ul class="nested">
+                            <li>
+                                <a href="https://kttc.ru/wot/ru/tp/users">Топ 1000 игроков</a>
+                            </li>
+                            <li>
+                                <a href="https://kttc.ru/wot/ru/top/international-rating">Международный рейтинг</a>
+                            </li>
+                            <li>
+                                <a href="https://kttc.ru/wot/ru/op/tanks">Топ по танкам</a>
+                            </li>
+                            <li>
+                                <a href="https://kttc.ru/wot/ru/totop/users-last-month">Топ 1000 игроков (за прошлый месяц)</a>
+                            </li>
+                            <li>
+                                <a href="https://kttc.ru/wot/ru/top/session">Топ игроков (за последние сессии)</a>
+                            </li>
+                            <li>
+                                <a href="https://kttc.ru/wot/ru/top/clans">Топ 1000 Кланы</a>
+                            </li>
+                            <li>
+                                <a href="https://kttc.ru/wot/ru/top/streamers">Статистика стримеров</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="side-panel-link"></a>
+                    </li>
+                    <li>
+                        <a class="side-panel-link" href="">Информация</a>
+                        <ul>
+                            <li>
+                                <a>Онлайн</a>
+                            </li>
+                            <li>
+                                <a>Цветовая шкала</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a class="tg">Наш Telegram</a>
+                            </li>
+                            <li>
+                                <a class="vk">Наш ВК</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div class="banner">
+                    <a href="https://click.track-lesta.ru/BQYH8Zxk">
+                        <img src="https://kttc.ru/images/wot/Front_line_KTTC_Banner_970x250.jpg">
+                    </a>
+                </div>
+                <section class="card">
+                    <header>
+                        <h2>Топ 10 игроков (WN8)</h2>
+                        <p>от 15к боев, ср. ур. техники 9-10</p>
+                        <ol class="positions">
+                            <li>
+                                <div class="first-place">1</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="second-place">2</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="third-place">3</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">4</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">5</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights" style="color:#c64cff;">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">6</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">7</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">8</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">9</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights" style="color: ">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">10</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li class="top">
+                                <a class="top1000" href="https://kttc.ru/wot/ru/top/users/wn8/15000/">Топ 1000 игроков WN8</a>
+                            </li>
+                        </ol>
+                    </header>
+                </section>
+                <section class="card">
+                    <header>
+                        <h2>Топ 10 игроков (WN8)</h2>
+                        <p>от 15к боев, ср. ур. техники 7-8</p>
+                        <ol class="positions">
+                            <li>
+                                <div class="first-place">1</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="second-place">2</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="third-place">3</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">4</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">5</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights" style="color: #c64cff">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">6</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">7</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">8</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">9</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">10</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li class="top">
+                                <a class="top1000" href="https://kttc.ru/wot/ru/top/users/wn8/15000/">Топ 1000 игроков WN8</a>
+                            </li>
+                        </ol>
+                    </header>
+                </section>
+                <section class="card">
+                    <header>
+                        <h2>Топ 10 игроков (WN8)</h2>
+                        <p>от 15к боев, ср. ур. техники 1-6</p>
+                        <ol class="positions">
+                            <li>
+                                <div class="first-place">1</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="second-place">2</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="third-place">3</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">4</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">5</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">6</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">7</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">8</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">9</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate" style="color: #25c2dd">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">10</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li class="top">
+                                <a class="top1000" href="https://kttc.ru/wot/ru/top/users/wn8/15000/">Топ 1000 игроков WN8</a>
+                            </li>
+                        </ol>
+                    </header>
+                </section>
+                <section class="card">
+                    <header>
+                        <h2>Лучшие 10 кланов (WN8)</h2>
+                        <p>от 90 игроков</p>
+                        <ol class="positions">
+                            <li>
+                                <div class="first-place">1</div>
+                                <img class="clan-icon" src="https://lesta.ru/clans/media/clans/emblems/cl_249/474249/emblem_64x64.png">
+
+                                <a class="nickname" href="http://google.com">
+                                    <span style="color:#31dde9">[</span>ERETC<span style="color:#31dde9">]</span>
+                                </a>
+
+                                <div class="stats">
+                                    <span class="win-scores">3720</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="second-place">2</div>
+                                <img class="clan-icon" src="https://lesta.ru/clans/media/clans/emblems/cl_249/474249/emblem_64x64.png">
+
+                                <a class="nickname" href="http://google.com">
+                                    <span style="color:#31dde9">[</span>ERETC<span style="color:#31dde9">]</span>
+                                </a>
+
+                                <div class="stats">
+                                    <span class="win-scores">3720</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="third-place">3</div>
+                                <img class="clan-icon" src="https://lesta.ru/clans/media/clans/emblems/cl_249/474249/emblem_64x64.png">
+
+                                <a class="nickname" href="http://google.com">
+                                    <span style="color:#31dde9">[</span>ERETC<span style="color:#31dde9">]</span>
+                                </a>
+
+                                <div class="stats">
+                                    <span class="win-scores" style="color: #25c2dd">3720</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">4</div>
+                                <img class="clan-icon" src="https://lesta.ru/clans/media/clans/emblems/cl_249/474249/emblem_64x64.png">
+
+                                <a class="nickname" href="http://google.com">
+                                    <span style="color:#31dde9">[</span>ERETC<span style="color:#31dde9">]</span>
+                                </a>
+
+                                <div class="stats">
+                                    <span class="win-scores" style="color: #25c2dd">3720</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">5</div>
+                                <img class="clan-icon" src="https://lesta.ru/clans/media/clans/emblems/cl_249/474249/emblem_64x64.png">
+
+                                <a class="nickname" href="http://google.com">
+                                    <span style="color:#31dde9">[</span>ERETC<span style="color:#31dde9">]</span>
+                                </a>
+
+                                <div class="stats">
+                                    <span class="win-scores" style="color: #25c2dd">3720</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">6</div>
+                                <img class="clan-icon" src="https://lesta.ru/clans/media/clans/emblems/cl_249/474249/emblem_64x64.png">
+
+                                <a class="nickname" href="http://google.com">
+                                    <span style="color:#31dde9">[</span>ERETC<span style="color:#31dde9">]</span>
+                                </a>
+
+                                <div class="stats">
+                                    <span class="win-scores" style="color: #25c2dd">3720</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">7</div>
+                                <img class="clan-icon" src="https://lesta.ru/clans/media/clans/emblems/cl_249/474249/emblem_64x64.png">
+
+                                <a class="nickname" href="http://google.com">
+                                    <span style="color:#31dde9">[</span>ERETC<span style="color:#31dde9">]</span>
+                                </a>
+
+                                <div class="stats">
+                                    <span class="win-scores" style="color: #25c2dd">3720</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">8</div>
+                                <img class="clan-icon" src="https://lesta.ru/clans/media/clans/emblems/cl_249/474249/emblem_64x64.png">
+
+                                <a class="nickname" href="http://google.com">
+                                    <span style="color:#31dde9">[</span>ERETC<span style="color:#31dde9">]</span>
+                                </a>
+
+                                <div class="stats">
+                                    <span class="win-scores" style="color: #25c2dd">3720</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">9</div>
+                                <img class="clan-icon" src="https://lesta.ru/clans/media/clans/emblems/cl_249/474249/emblem_64x64.png">
+
+                                <a class="nickname" href="http://google.com">
+                                    <span style="color:#31dde9">[</span>ERETC<span style="color:#31dde9">]</span>
+                                </a>
+
+                                <div class="stats">
+                                    <span class="win-scores" style="color: #25c2dd">3720</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">10</div>
+                                <img class="clan-icon" src="https://lesta.ru/clans/media/clans/emblems/cl_249/474249/emblem_64x64.png">
+
+                                <a class="nickname" href="http://google.com">
+                                    <span style="color:#31dde9">[</span>ERETC<span style="color:#31dde9">]</span>
+                                </a>
+
+                                <div class="stats">
+                                    <span class="win-scores" style="color: #25c2dd">3720</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li class="top">
+                                <a class="top1000" href="https://kttc.ru/wot/ru/top/users/wn8/15000/">Топ 1000 кланов WN8</a>
+                            </li>
+                        </ol>
+                    </header>
+                </section>
+                <section class="card">
+                    <header>
+                        <h2>Топ 10 игроков (за прошлый месяц)</h2>
+                        <p>от 100 боев</p>
+                        <ol class="positions">
+                            <li>
+                                <div class="first-place">1</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="second-place">2</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="third-place">3</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">4</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">5</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">6</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">7</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">8</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">9</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li>
+                                <div class="place">10</div>
+                                <a class="nickname" href="http://google.com">WolfHeart</a>
+                                <div class="stats">
+                                    <span class="win-scores">5895</span>
+                                    <span class="fights">29160</span>
+                                    <span class="winrate">(70%)</span>
+                                </div>
+                            </li>
+                            <sep class="separator"></sep>
+                            <li class="top">
+                                <a class="top1000" href="https://kttc.ru/wot/ru/top/users/wn8/15000/">Топ 1000 игроков (за прошлый месяц) WN8</a>
+                            </li>
+                        </ol>
+                    </header>
+                </section>
+            </div>
+        </div>
+        <footer>
+        <div class="foot-content">
+            <div class="rights">© 2013 - 2023 KTTC. Все права защищены. 12+
+                <span class="delimiter">|</span>
+                C 2013-2020 года Официальный фан ресурс&nbsp;World of Tanks. С 2020 года не являемся такими.
+            </div>
+            <div class="foot-link">
+                hi@kttc.ru
+            </div>
+
+        </div>
+    </footer>
+    </div>
+
+</body>
+</html>

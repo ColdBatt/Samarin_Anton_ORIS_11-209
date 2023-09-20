@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Include="bin\Debug\net7.0\static\tanki.html" />
+    </ItemGroup>
+
+
+
+
+
+
+    <ItemGroup>
+      <EditorConfigFiles Include="..\..\..\..\..\.dotnet\sdk\7.0.306\Sdks\Microsoft.NET.Sdk\analyzers\build\config\analysislevel_7_default.editorconfig">
+        <Link>Configuration\analysislevel_7_default.editorconfig</Link>
+      </EditorConfigFiles>
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Folder Include="static\images\" />
+    </ItemGroup>
+
+</Project>
