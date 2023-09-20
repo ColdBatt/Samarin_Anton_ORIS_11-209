@@ -1,0 +1,16 @@
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\HttpServer.exe
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\appsettings.json
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\HttpServer.deps.json
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\HttpServer.runtimeconfig.json
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\HttpServer.dll
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\HttpServer.pdb
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.csproj.AssemblyReference.cache
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.AssemblyInfoInputs.cache
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.AssemblyInfo.cs
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.csproj.CoreCompileInputs.cache
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.dll
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\refint\HttpServer.dll
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.pdb
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.genruntimeconfig.cache
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\ref\HttpServer.dll
