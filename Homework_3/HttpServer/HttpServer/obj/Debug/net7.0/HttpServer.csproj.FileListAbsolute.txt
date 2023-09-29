@@ -14,3 +14,16 @@ C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\o
 C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.pdb
 C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.genruntimeconfig.cache
 C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\ref\HttpServer.dll
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\not_found\not_found.html
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\index.html
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\styles\content.css
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\styles\footer.css
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\styles\header.css
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\styles\nav.css
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\images\emblem_64x64.png
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\images\favicon.png
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\images\Front_line_KTTC_Banner_970x250.jpg
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\images\kttc_logo.svg
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\images\search.svg
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\images\favicon.ico
+C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\favicon.ico

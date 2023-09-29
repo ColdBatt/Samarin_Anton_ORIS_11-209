@@ -7,22 +7,11 @@ using HttpServer;
 
 public static class Program
 {
-    private const string SettingsPath = @"./appsettings.json";
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
-        try
-        {
-            Configurator.UpdateConfig(SettingsPath);
-        }
-        catch (FileNotFoundException exception)
-        {
-            Console.WriteLine($"File {SettingsPath} not found");
-        }
-        finally
-        {
-            var server = new HttpServer.HttpServer();
-            server.Start();
-        }
+        var serverController = new ServerController();
+        serverController.StartServer();
+        serverController.Dispose();
     }
 }
 

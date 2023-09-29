@@ -6,45 +6,44 @@ namespace HttpServer;
 
 public class HttpServer
 {
-    private HttpListener _server;
+    private HttpListener _listener;
     private StaticManager _manager;
     public HttpServer()
     {
         _manager = new StaticManager();
-        _server = new HttpListener();
-        _server.Prefixes.Add($"https://{Config.Address}:{Config.Port}/connection/");
+        _listener = new HttpListener();
+        _listener.Prefixes.Add($"http://{Config.Address}:{Config.Port}/");
     }
 
-    public void Start()
+    public async Task StartAsync()
     {
         Console.WriteLine("Starting server...");
-        _server.Start();
-        Listen();
-        Console.WriteLine("Server started...");
+        _listener.Start();
+        Console.WriteLine($"Server started on port: {Config.Port}");
+        await ListenAsync();
     }
 
     public void Stop()
     {
-        _server.Close();
+        _listener.Close();
     }
 
-    async void Listen()
+    private async Task ListenAsync()
     {
         while (true)
         {
-            var context = await _server.GetContextAsync();
+            var context = await _listener.GetContextAsync();
             Console.WriteLine(context.Request);
-            await Task.Run(() =>
-                {
-                    var response = context.Response;
-                    var page = _manager.GetPage();
-                    response.ContentLength64 = page.Length;
-                    var output = response.OutputStream;
-                    output.WriteAsync(page);
-                    output.FlushAsync();
-                }
-            );
-            Thread.Sleep(20000);
+            
+            var url = context.Request.Url;
+            var response = context.Response;
+            var page = _manager.GetPage(url);
+            
+            response.ContentType = page.ContentType;
+            var output = response.OutputStream;
+            response.ContentLength64 = page.Length;
+            await output.WriteAsync(page.Content);
+            await output.FlushAsync();
         }
     }
     

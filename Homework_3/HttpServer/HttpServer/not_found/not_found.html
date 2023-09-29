@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Not found</title>
+    <style>
+        body{
+            font-size: 20px;
+            font-family: Roboto sans-serif;
+            margin: 0;
+            height: calc(100vh - 160px);
+        }
+        h1, p{
+            margin: 10px;
+        }
+        .content{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            margin-top: 160px;
+            flex-direction: column;
+            align-items: center;
+        }
+        .not-found-shape{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 180px;
+            height: 180px;
+            transform: rotate(45deg);
+            background: #FF5722;
+            border-radius: 5px;
+            margin-bottom: 50px;
+            border: 5px dashed black;
+        }
+        .code{
+            rotate: 315deg;
+            font-size: 80px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="not-found-shape">
+            <div class="code">404</div>
+        </div>
+        <h1 class="oops">Oops!</h1>
+        <p>this page not found...</p>
+    </div>
+</body>
+</html>

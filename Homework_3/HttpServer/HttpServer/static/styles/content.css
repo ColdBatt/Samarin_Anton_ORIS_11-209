@@ -1,0 +1,182 @@
+body{
+    font-size: 14px;
+    margin: 0;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: #f1f1f1;;
+}
+.banner{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.main-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 43%;
+    display: flex;
+    margin: 1.5vw 1.5%;
+    background-color: #fbfbfb;
+    border: 1px solid #dfdfdf;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 25px;
+    max-width: 100%;
+}
+h2{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.75em;
+    letter-spacing: -0.025em;
+    color: #47363f;
+}
+p{
+    margin-top: -10px;
+    display: flex;
+    justify-content: flex-start;
+    color: #999;
+    font-size: 1.25em;
+    position: relative;
+    margin-bottom: 1em;
+}
+.positions li{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 45px;
+    align-items: center;
+    padding: 5px 0;
+}
+.first-place{
+    color: white;
+    border-radius: 50%;
+    background-color: gold;
+    display: flex;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: -40px;
+}
+.nickname{
+    padding-left: 10px;
+    width: 50%;
+    font-size: 18px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #167ac6;
+}
+.stats{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: flex-end;
+}
+.win-scores{
+    margin-left: 5px;
+    color: #c64cff;
+}
+.fights{
+    margin-left: 5px;
+    color: #25c2dd;
+}
+.winrate{
+    margin-left: 5px;
+    color: #c64cff;
+}
+.second-place{
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    background-color: silver;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: -40px;
+}
+.third-place{
+    color: white;
+    border-radius: 50%;
+    background-color: #e8b17a;
+    display: flex;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: -40px;
+}
+.place{
+    color: black;
+    border-radius: 50%;
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: -40px;
+}
+.positions{
+    border-bottom-color: rgb(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0;
+}
+.separator{
+    width: calc(40px + 100%);
+    left: 40px;
+    height: 0.5px;
+    background-color: #6d6d6d;
+}
+.positions .top{
+    padding: 15px 0 0 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.top1000{
+    text-decoration: none;
+    color: rgb(22, 122, 198);
+    font-size: 18px;
+    font-weight: 400;
+}
+.top1000:hover{
+    text-decoration: underline;
+}
+.clan-icon{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.nickname{
+    margin: 0;
+}
