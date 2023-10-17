@@ -18,10 +18,6 @@ public static class Configurator
     
     public static void UpdateConfig(string path)
     {
-        if (!File.Exists(path))
-            throw new FileNotFoundException($"Configuration file not found path: {path}");
         
-        using var file = File.OpenRead(path);
-        _config = JsonSerializer.Deserialize<AppSetting>(file);
     }
 }

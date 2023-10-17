@@ -8,6 +8,7 @@ public class HttpServer
 {
     private HttpListener _listener;
     private StaticManager _manager;
+    
     public HttpServer()
     {
         _manager = new StaticManager();
@@ -33,7 +34,7 @@ public class HttpServer
         while (true)
         {
             var context = await _listener.GetContextAsync();
-            Console.WriteLine(context.Request);
+           
             
             var url = context.Request.Url;
             var response = context.Response;

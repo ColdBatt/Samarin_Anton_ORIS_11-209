@@ -14,6 +14,14 @@ C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\o
 C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.pdb
 C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.genruntimeconfig.cache
 C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\ref\HttpServer.dll
+C:\STUDY\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.csproj.AssemblyReference.cache
+C:\STUDY\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\STUDY\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.AssemblyInfoInputs.cache
+C:\STUDY\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.AssemblyInfo.cs
+C:\STUDY\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.csproj.CoreCompileInputs.cache
+C:\STUDY\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.dll
+C:\STUDY\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\refint\HttpServer.dll
+C:\STUDY\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\obj\Debug\net7.0\HttpServer.pdb
 C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\not_found\not_found.html
 C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\index.html
 C:\Users\anton\repo\Samarin_Anton_ORIS_11-209\Homework_3\HttpServer\HttpServer\bin\Debug\net7.0\static\styles\content.css
